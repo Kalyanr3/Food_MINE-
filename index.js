@@ -11,7 +11,7 @@ const path = require('path');
 
 const app = express();
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 dotenv.config();
 
@@ -38,8 +38,8 @@ app.use('/product',productRoutes);
 app.use('/uploads', express.static('uploads'));
 
 // Define route
-app.use('/home', (req, res) => {
-  res.send("<h1>Welcome to Food MINE!</h1>");
+app.use('/', (req, res) => {
+  res.send("<h1> Welcome to Food MINE! </h1>");
 });
 
 // Start the server
