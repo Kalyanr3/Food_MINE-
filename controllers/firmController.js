@@ -70,6 +70,7 @@ module.exports = {addFirm: [upload.single('image'), addFirm]};
 const Firm = require('../models/Firm');  // Correct import for Firm model
 const Vendor = require('../models/vendor');
 const multer = require('multer');
+const path = require('path');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

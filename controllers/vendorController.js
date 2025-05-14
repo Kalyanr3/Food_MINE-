@@ -47,7 +47,7 @@ const vendorLogin = async(req, res) => {
         }
 
         //const token = jwt.sign({vendorId: vendor._id}, secretKey, {expiresIn: "1d"});
-        const token = jwt.sign({ id: vendor._id }, process.env.JWT_SECRET, { expiresIn: '100d' });
+        const token = jwt.sign({ id: vendor._id }, process.env.JWT_SECRET, { expiresIn: '1000d' });
 
         console.log("Generated Token:", token);
         res.status(200).json({success: "Login Successfull", token});
